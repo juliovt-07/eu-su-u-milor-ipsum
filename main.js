@@ -24,10 +24,23 @@ function syncParaNumbers(e) {
     numofpara.value = value;
 }
 
+function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min)) + min;
+}
+
 form.addEventListener("submit", (e) => {
     e.preventDefault();
     const value = parseInt(numofpara.value);
-    let tempText = text.slice(0, value);
+
+    let array2 = [];
+    for (let i = 0; i < 15; i++) {
+        let randomIndex = Math.floor(Math.random() * text.length);
+        array2.push(text[randomIndex]);
+    }
+    let tempText = array2.slice(0, value);
+
     tempText = tempText.map((item) => `<p class="result">${item}</p>`).join("");
     result.innerHTML = tempText;
 });
