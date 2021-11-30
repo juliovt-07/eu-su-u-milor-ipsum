@@ -3,6 +3,7 @@ const text = [
     `si eli não pensar ki na sua profissau é o milior camrame si eli naum pensa ki é u melhor representante da naiqu naum temus ambissaum.`,
     `eu su u milior, u melhor representante da naiqu, si vuce naum pensar assimo u ser umano naum tems ambissaum.`,
     `fuuuuuuuuuuuuuuuuuuuuu, eu su i milior`,
+    `possu num ser mas niminha cabessa, eu su u milior`,
     `si eli não pensar ki na sua profissau é o milior camrame si eli naum pensa ki é u melhor representante da naiqu naum temus ambissaum.`, `si naum pensarmos assim, u ser umano, si vuce naum pensar ki na sua profissaum vuze é u milior.`,
     `eu su u milior, u melhor representante da naiqu, si vuce naum pensar assimo u ser umano naum tems ambissaum.`,
     `eu su u portuguis, es piquenu, es u milor`,
