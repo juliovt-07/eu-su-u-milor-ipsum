@@ -5,28 +5,144 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- <link rel="stylesheet" href="styles.css"> --> {/* Removed due to overwrite issues and Tailwind focus */}
     <link rel="icon" type="image/x-icon" href="assets/icon.webp">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
     <title>EU SOU U MILOR IPSUM</title>
+    <script>
+        tailwind.config = {
+            darkMode: 'class', // or 'media'
+            theme: {
+                extend: {
+                    colors: {
+                        border: 'hsl(var(--border))',
+                        input: 'hsl(var(--input))',
+                        ring: 'hsl(var(--ring))',
+                        background: 'hsl(var(--background))',
+                        foreground: 'hsl(var(--foreground))',
+                        primary: {
+                            DEFAULT: 'hsl(var(--primary))',
+                            foreground: 'hsl(var(--primary-foreground))'
+                        },
+                        secondary: {
+                            DEFAULT: 'hsl(var(--secondary))',
+                            foreground: 'hsl(var(--secondary-foreground))'
+                        },
+                        destructive: {
+                            DEFAULT: 'hsl(var(--destructive))',
+                            foreground: 'hsl(var(--destructive-foreground))'
+                        },
+                        muted: {
+                            DEFAULT: 'hsl(var(--muted))',
+                            foreground: 'hsl(var(--muted-foreground))'
+                        },
+                        accent: {
+                            DEFAULT: 'hsl(var(--accent))',
+                            foreground: 'hsl(var(--accent-foreground))'
+                        },
+                        popover: {
+                            DEFAULT: 'hsl(var(--popover))',
+                            foreground: 'hsl(var(--popover-foreground))'
+                        },
+                        card: {
+                            DEFAULT: 'hsl(var(--card))',
+                            foreground: 'hsl(var(--card-foreground))'
+                        },
+                    },
+                    borderRadius: {
+                        lg: "var(--radius)",
+                        md: "calc(var(--radius) - 2px)",
+                        sm: "calc(var(--radius) - 4px)",
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer base {
+            :root {
+                --background: 0 0% 100%;
+                --foreground: 222.2 84% 4.9%;
+                --card: 0 0% 100%;
+                --card-foreground: 222.2 84% 4.9%;
+                --popover: 0 0% 100%;
+                --popover-foreground: 222.2 84% 4.9%;
+                --primary: 222.2 47.4% 11.2%;
+                --primary-foreground: 210 40% 98%;
+                --secondary: 210 40% 96.1%;
+                --secondary-foreground: 222.2 47.4% 11.2%;
+                --muted: 210 40% 96.1%;
+                --muted-foreground: 215.4 16.3% 46.9%;
+                --accent: 210 40% 96.1%;
+                --accent-foreground: 222.2 47.4% 11.2%;
+                --destructive: 0 84.2% 60.2%;
+                --destructive-foreground: 210 40% 98%;
+                --border: 214.3 31.8% 91.4%;
+                --input: 214.3 31.8% 91.4%;
+                --ring: 222.2 84% 4.9%;
+                --radius: 0.5rem;
+            }
+
+            .dark {
+                --background: 222.2 84% 4.9%;
+                --foreground: 210 40% 98%;
+                --card: 222.2 84% 4.9%;
+                --card-foreground: 210 40% 98%;
+                --popover: 222.2 84% 4.9%;
+                --popover-foreground: 210 40% 98%;
+                --primary: 210 40% 98%;
+                --primary-foreground: 222.2 47.4% 11.2%;
+                --secondary: 217.2 32.6% 17.5%;
+                --secondary-foreground: 210 40% 98%;
+                --muted: 217.2 32.6% 17.5%;
+                --muted-foreground: 215 20.2% 65.1%;
+                --accent: 217.2 32.6% 17.5%;
+                --accent-foreground: 210 40% 98%;
+                --destructive: 0 62.8% 30.6%;
+                --destructive-foreground: 210 40% 98%;
+                --border: 217.2 32.6% 17.5%;
+                --input: 217.2 32.6% 17.5%;
+                --ring: 215 20.2% 65.1%;
+            }
+        }
+
+        @layer base {
+            * {
+                @apply border-border;
+            }
+            body {
+                @apply bg-background text-foreground;
+            }
+        }
+    </style>
 </head>
 
-<body>
-    <img class="bg" src="assets/bg.webp">
-    <section class="section-center">
-        <img src="assets/icon.webp" height="80">
-        <h3>EU SOU O MILOR IPSUM</h3>
-        <form class="lorem-form">
-            <label for="numofpara">PARÁGRAFOS</label>
-            <div class="paraAmountNum">
-                <input type="number" min="1" max="14" value="3" id="numofpara" />
+<body class="bg-background text-foreground antialiased">
+    <section class="section-center mx-auto max-w-2xl p-4 sm:p-6 md:p-8 mt-6 sm:mt-10 rounded-lg shadow-xl bg-card text-card-foreground">
+        <div class="flex flex-col items-center mb-6 sm:mb-8">
+            <img src="assets/icon.webp" alt="Logo Milor Ipsum" class="h-16 w-16 sm:h-20 sm:w-20 mb-3 sm:mb-4 rounded-full shadow-sm">
+            <h2 class="text-2xl sm:text-3xl font-bold text-primary tracking-tight text-center">EU SOU O MILOR IPSUM</h2>
+        </div>
+        
+        <form class="lorem-form space-y-6">
+            <div>
+                <label for="numofpara" class="block text-sm font-medium text-muted-foreground mb-1 sm:mb-2">PARÁGRAFOS</label>
+                <div class="paraAmountNum"> {/* This div might be used by main.js, keeping it */}
+                    <input type="number" min="1" max="14" value="3" id="numofpara" class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" />
+                </div>
             </div>
-            <button type="submit" class="btn">GERAR O MILOR</button>
+            
+            <button type="submit" class="btn inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 w-full">
+                GERAR O MILOR
+            </button>
         </form>
-        <div class="line"></div>
-        <article class="lorem-text"></article>
+        
+        <hr class="my-6 sm:my-8 border-border" />
+        
+        <article class="lorem-text rounded-md border border-input bg-transparent p-3 sm:p-4 min-h-[150px] sm:min-h-[200px] text-sm text-foreground space-y-4"></article>
     </section>
     <script src="main.js"></script>
 </body>
