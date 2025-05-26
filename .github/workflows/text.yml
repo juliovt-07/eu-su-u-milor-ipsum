@@ -1,0 +1,16 @@
+name: testando pipeline
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  primeiro:
+    runs-on: ubuntu-latest
+    steps:
+      - name: testar comandos
+      - run: echo "testando comandos"
+  
+  segundo:
+    runs-on: ubuntu-latest
+    run: echo "finalizar"
