@@ -25,15 +25,15 @@ jobs:
     needs: [definir_sites]
     strategy:
         matrix:
-          people: ${{ needs.definir_sites.outputs.* }}
+          people: ${{ toJson(needs.definir_sites.outputs.people) }}
     outputs:
-      people: ${{ toJson(matrix.people) }}
+      people: ${{ matrix.people }}
     steps:
       - name: checkout do repositório
         uses: actions/checkout@v4
 
       - name: configurar o ambiente
-        run: echo "configurando o ambiente ${{ fromJson(needs.definir_sites.outputs.people) }}"
+        run: echo "configurando o ambiente ${{ matrix.people }}"
 
       - name: testar comandos
         run: echo "testando comandos"
