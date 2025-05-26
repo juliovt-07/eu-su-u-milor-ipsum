@@ -12,7 +12,7 @@ jobs:
         matrix:
           people: ['nathan', 'julio']
     outputs:
-      people: ${{ toJson(matrix.people) }}
+      people: ${{ matrix.people }}
     steps:
       - name: checkout do repositório
         uses: actions/checkout@v4
