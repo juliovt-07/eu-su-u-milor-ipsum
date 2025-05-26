@@ -29,3 +29,15 @@ jobs:
 
       - name: testar comandos
         run: echo "testando comandos"
+  terceiro:
+    runs-on: ubuntu-latest
+    needs: [primeiro, segundo]
+    steps:
+      - name: checkout do repositório
+        uses: actions/checkout@v4
+
+      - name: configurar o ambiente
+        run: echo "configurando o ambiente"
+
+      - name: testar comandos
+        run: echo "testando comandos"
