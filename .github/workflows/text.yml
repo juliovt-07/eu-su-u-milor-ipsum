@@ -18,11 +18,11 @@ jobs:
       - name: imprimir pessoas
         run: echo "a pessoa é ${{ matrix.people }}"
     outputs:
-      people: ${{ matrix.people }}
+      people1: ${{ matrix.people }}
       
   instalar_dependencias:
     runs-on: ubuntu-latest
-    needs: [definir_sites]
+    needs: definir_sites
     strategy:
         matrix:
           people: ${{ needs.definir_sites.outputs }}
