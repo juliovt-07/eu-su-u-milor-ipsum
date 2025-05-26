@@ -9,7 +9,6 @@ jobs:
   primeiro:
     runs-on: ubuntu-latest
     strategy:
-      output:
         matrix:
           people: ['nathan', 'julio']
     steps:
