@@ -11,6 +11,8 @@ jobs:
     steps:
       - name: checkout do repositório
       - uses: actions/checkout@v4
-      
+      - name: configurar o ambiente
+        run: echo "configurando o ambiente"
+
       - name: testar comandos
       - run: echo "testando comandos"
