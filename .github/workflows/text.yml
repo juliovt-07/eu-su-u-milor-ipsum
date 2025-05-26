@@ -8,15 +8,17 @@ on:
 jobs:
   primeiro:
     runs-on: ubuntu-latest
+    matrix:
+      people: ['nathan', 'julio']
+    output:
+      pessoa: ${{ matrix.people }}
     steps:
       - name: checkout do repositório
         uses: actions/checkout@v4
+      
+      - name: imprimir pessoas
+        run: echo "a pessoa é ${{ matrix.people }}"
 
-      - name: configurar o ambiente
-        run: echo "configurando o ambiente"
-
-      - name: testar comandos
-        run: echo "testando comandos"
   segundo:
     runs-on: ubuntu-latest
     needs: [primeiro]
@@ -29,6 +31,7 @@ jobs:
 
       - name: testar comandos
         run: echo "testando comandos"
+
   terceiro:
     runs-on: ubuntu-latest
     needs: [primeiro]
