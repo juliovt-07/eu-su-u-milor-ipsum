@@ -33,7 +33,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: configurar o ambiente
-        run: echo "configurando o ambiente ${{ matrix.people }}"
+        run: echo "configurando o ambiente ${{ needs.definir_sites.outputs.people }}"
 
       - name: testar comandos
         run: echo "testando comandos"
