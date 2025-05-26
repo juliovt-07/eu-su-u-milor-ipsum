@@ -8,8 +8,9 @@ on:
 jobs:
   primeiro:
     runs-on: ubuntu-latest
-    matrix:
-      people: ['nathan', 'julio']
+    strategy:
+      matrix:
+        people: ['nathan', 'julio']
     output:
       pessoa: ${{ matrix.people }}
     steps:
