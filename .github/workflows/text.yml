@@ -26,8 +26,6 @@ jobs:
     strategy:
         matrix:
           people: ${{ needs.definir_sites.outputs.people }}
-    outputs:
-      people: ${{ matrix.people }}
     steps:
       - name: checkout do repositório
         uses: actions/checkout@v4
