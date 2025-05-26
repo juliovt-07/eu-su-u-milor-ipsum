@@ -12,12 +12,13 @@ jobs:
         matrix:
           people: ['nathan', 'julio']
     steps:
-      - name: checkout do repositório
-        uses: actions/checkout@v4
+      # - name: checkout do repositório
+      #   uses: actions/checkout@v4
       
       - name: imprimir pessoas
         run: echo "a pessoa é ${{ matrix.people }}"
 
+      - run: echo ${{ matrix.values }} > value
       - uses: actions/upload-artifact@v4
         with:
           name: matrix-${{ matrix.people }}
@@ -29,8 +30,8 @@ jobs:
     runs-on: ubuntu-latest
     needs: definir_sites
     steps:
-      - name: checkout do repositório
-        uses: actions/checkout@v4
+      # - name: checkout do repositório
+      #   uses: actions/checkout@v4
 
       - name: configurar o ambiente
         run: echo "configurando o ambiente ${{ matrix.people }}"
