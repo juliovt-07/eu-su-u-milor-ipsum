@@ -1,4 +1,5 @@
 name: testando pipeline
+run-name: ${{ github.actor }}
 on:
   push:
     branches:
