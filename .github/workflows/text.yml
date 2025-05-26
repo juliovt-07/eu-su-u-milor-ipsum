@@ -23,12 +23,15 @@ jobs:
   instalar_dependencias:
     runs-on: ubuntu-latest
     needs: [definir_sites]
+    strategy:
+        matrix:
+          people: ${{ fromJson(needs.definir_sites.outputs.people) }}
     steps:
       - name: checkout do repositório
         uses: actions/checkout@v4
 
       - name: configurar o ambiente
-        run: echo "configurando o ambiente ${{ needs.definir_sites.outputs.people }}"
+        run: echo "configurando o ambiente ${{ matrix.people }}"
 
       - name: testar comandos
         run: echo "testando comandos"
