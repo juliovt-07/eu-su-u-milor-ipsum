@@ -1,27 +1,19 @@
-name: Text Processing Pipeline
+name: testando pipeline
+run-name: ${{ github.actor }}
 on:
   push:
     branches:
       - master
-  pull_request:
-    branches:
-      - master
+
 jobs:
-  text_processing:
+  primeiro:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+      - name: checkout do repositório
+        uses: actions/checkout@v4
+        
+      - name: configurar o ambiente
+        run: echo "configurando o ambiente"
 
-      - name: Set up Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: '3.8'
-
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
-
-      - name: Run text processing script
-        run: python process_text.py
+      - name: testar comandos
+      - run: echo "testando comandos"
