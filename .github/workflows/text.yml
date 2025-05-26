@@ -31,7 +31,7 @@ jobs:
         run: echo "testando comandos"
   terceiro:
     runs-on: ubuntu-latest
-    needs: [primeiro, segundo]
+    needs: [primeiro]
     steps:
       - name: checkout do repositório
         uses: actions/checkout@v4
