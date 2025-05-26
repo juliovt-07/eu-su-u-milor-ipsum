@@ -25,20 +25,23 @@ jobs:
       - name: output person
         id: person
         run: echo "person=${{ matrix.person }}" >> $GITHUB_OUTPUT
+
+      - name: instalar_dependencias do ${{ matrix.person }}
+        run: echo "instalando dependências para ${{ matrix.person }}"
       
-  instalar_dependencias:
-    runs-on: ubuntu-latest
-    needs: definir_sites
-    strategy:
-        matrix: ${{ fromJson(needs.definir_sites.outputs.person) }}
-    outputs:
-      person: ${{ steps.person.outputs.person }}
-    steps:
-      # - name: checkout do repositório
-      #   uses: actions/checkout@v4
+  # instalar_dependencias:
+  #   runs-on: ubuntu-latest
+  #   needs: definir_sites
+  #   strategy:
+  #       matrix: ${{ fromJson(needs.definir_sites.outputs.person) }}
+  #   outputs:
+  #     person: ${{ steps.person.outputs.person }}
+  #   steps:
+  #     # - name: checkout do repositório
+  #     #   uses: actions/checkout@v4
 
-      - name: configurar o ambiente do ${{ matrix.person }}
-        run: echo "configurando o ambiente ${{ matrix.person }}"
+  #     - name: configurar o ambiente do ${{ matrix.person }}
+  #       run: echo "configurando o ambiente ${{ matrix.person }}"
 
-      - name: testar comandos
-        run: echo "testando comandos"
+  #     - name: testar comandos
+  #       run: echo "testando comandos"
