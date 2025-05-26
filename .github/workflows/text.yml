@@ -11,32 +11,27 @@ jobs:
     strategy:
         matrix:
           people: ['nathan', 'julio']
-    outputs:
-      people: ${{ matrix.people }}
     steps:
       - name: checkout do repositório
         uses: actions/checkout@v4
       
       - name: imprimir pessoas
         run: echo "a pessoa é ${{ matrix.people }}"
-
+    outputs:
+      people: ${{ matrix.people }}
+      
   instalar_dependencias:
     runs-on: ubuntu-latest
     needs: [definir_sites]
+    strategy:
+        matrix:
+          people: ${{ fromJson(needs.definir_sites.outputs.people) }}
     steps:
-      - uses: cloudposse/github-action-matrix-outputs-read@v1
-        id: read
-        with:
-          matrix-step-name: definir_sites
-
       - name: checkout do repositório
         uses: actions/checkout@v4
 
       - name: configurar o ambiente
-        run: echo "configurando o ambiente ${{ needs.definir_sites.outputs.people }}"
+        run: echo "configurando o ambiente ${{ matrix.people }}"
 
       - name: testar comandos
         run: echo "testando comandos"
-
-    outputs:
-      result: "${{ steps.read.outputs.result }}"
