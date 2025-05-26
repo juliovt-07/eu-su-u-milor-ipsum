@@ -9,9 +9,9 @@ jobs:
   primeiro:
     runs-on: ubuntu-latest
     strategy:
-    output:
-      matrix:
-        people: ['nathan', 'julio']
+      output:
+        matrix:
+          people: ['nathan', 'julio']
     steps:
       - name: checkout do repositório
         uses: actions/checkout@v4
